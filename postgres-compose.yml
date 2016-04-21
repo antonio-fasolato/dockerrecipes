@@ -1,0 +1,12 @@
+postgres-data:
+  image: busybox
+  volumes:
+    - /home/tony/docker_data/postgres:/var/lib/postgresql/data
+postgres:
+  image: postgres
+  ports:
+    - 5432:5432
+  environment:
+    POSTGRES_PASSWORD: 'tony'
+  volumes_from:
+    - postgres-data

@@ -1,0 +1,11 @@
+rabbit-data:
+  image: busybox
+  volumes:
+    - /home/tony/docker_data/rabbit:/var/lib/rabbitmq
+elastic:
+  image: rabbitmq:3-management
+  ports:
+    - 5672:5672
+    - 15672:15672
+  volumes_from:
+    - rabbit-data
