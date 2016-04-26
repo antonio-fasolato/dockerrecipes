@@ -3,7 +3,7 @@ elastic-data:
   volumes:
     - /home/tony/docker_data/elastic:/usr/share/elasticsearch/data
 elastic:
-  image: elasticsearch
+  image: elastickopf
   ports:
     - 9200:9200
     - 9300:9300
@@ -17,3 +17,13 @@ kibana:
     - elastic
   environment:
     ELASTICSEARCH_URL: 'http://elastic:9200/'
+beanstalkd:
+  image: schickling/beanstalkd
+  ports:
+    - 11300:11300
+beanstalkd-console:
+  image: schickling/beanstalkd-console
+  ports:
+    - 2080:2080
+  links:
+    - beanstalkd
