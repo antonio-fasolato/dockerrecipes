@@ -4,6 +4,7 @@ rabbit-data:
     - /home/tony/docker_data/rabbit:/var/lib/rabbitmq
 rabbit:
   image: rabbitmq:3-management
+  hostname: rabbitdevel
   ports:
     - 5672:5672
     - 15672:15672
