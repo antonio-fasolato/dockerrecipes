@@ -2,7 +2,7 @@ rabbit-data:
   image: busybox
   volumes:
     - /home/tony/docker_data/rabbit:/var/lib/rabbitmq
-elastic:
+rabbit:
   image: rabbitmq:3-management
   ports:
     - 5672:5672
