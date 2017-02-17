@@ -1,0 +1,1 @@
+docker run -p 8111:8111 -d sjoerdmulder/teamcity:latest

@@ -1,0 +1,31 @@
+# cassandra-data:
+#   image: busybox
+#   volumes:
+#     - /home/tony/Documenti/docker-data/cassandra:/var/lib/cassandra
+# cassandra:
+#   image: cassandra:3.9
+#   ports:
+#     - 7000:7000
+#     - 7001:7001
+#     - 9042:9042
+#     - 7199:7199
+#   volumes_from:
+#     - cassandra-data
+helenos:
+  image: jetty
+  ports:
+    - 8080:8080
+  # links:
+  #   - cassandra
+# rabbit-data:
+#   image: busybox
+#   volumes:
+#     - /home/tony/docker_data/rabbit:/var/lib/rabbitmq
+# rabbit:
+#   image: rabbitmq:3-management
+#   hostname: rabbitdevel
+#   ports:
+#     - 5672:5672
+#     - 15672:15672
+#   volumes_from:
+#     - rabbit-data
