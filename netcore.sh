@@ -1,1 +1,0 @@
-docker run -p 5000:5000 -it -v /mnt/nb0729/workspaces/:/workspaces microsoft/dotnet:latest

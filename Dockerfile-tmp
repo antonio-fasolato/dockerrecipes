@@ -1,3 +1,0 @@
-FROM elasticsearch
-
-RUN plugin install andrewvc/elastic-hammer
