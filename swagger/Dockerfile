@@ -21,4 +21,4 @@ VOLUME ["/var/log/nginx", "/usr/swagger-data"]
 
 EXPOSE 80 81
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
