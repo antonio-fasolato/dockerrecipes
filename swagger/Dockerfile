@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM anapsix/alpine-java:8
 
 RUN apk update && apk upgrade && \
     apk add --no-cache git nginx curl
@@ -15,8 +15,7 @@ RUN cd /usr && \
 RUN mkdir /usr/swagger-data ; chmod a+rw /usr/swagger-data
 
 RUN mkdir /usr/swagger-codegen & \
-    cd /usr/swagger-codegen & \
-    curl https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.1/swagger-codegen-cli-2.2.2.jar > swagger-codegen-cli-2.2.2.jar
+    curl https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar -o /usr/swagger-codegen/swagger-codegen-cli-2.2.2.jar
 
 RUN mkdir -p /run/nginx
 COPY nginx.conf /etc/nginx/nginx.conf
